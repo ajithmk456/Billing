@@ -1,0 +1,44 @@
+<h2>Create Invoice</h2>
+
+<label for="invoiceNumber">Invoice Number:</label>
+<input id="invoiceNumber" [(ngModel)]="invoiceNumber" type="text" />
+
+<label for="date">Date:</label>
+<input id="date" [(ngModel)]="date" type="date" />
+
+<label for="billTo">Bill To:</label>
+<textarea id="billTo" [(ngModel)]="billTo" rows="4"></textarea>
+
+<h3>Items</h3>
+<table>
+  <tr>
+    <th>S.NO</th>
+    <th>Item Name</th>
+    <th>HSN/SAC</th>
+    <th>Quantity</th>
+    <th>Price/Unit</th>
+    <th>Taxable Amount</th>
+    <th>CGST</th>
+    <th>SGST</th>
+    <th>Amount</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let item of items; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td><input [(ngModel)]="item.name" /></td>
+    <td><input [(ngModel)]="item.hsn" /></td>
+    <td><input [(ngModel)]="item.quantity" type="number" /></td>
+    <td><input [(ngModel)]="item.price" type="number" /></td>
+    <td>{{ item.quantity * item.price }}</td>
+    <td><input [(ngModel)]="item.cgst" type="number" />%</td>
+    <td><input [(ngModel)]="item.sgst" type="number" />%</td>
+    <td>{{ calculateAmount(item) }}</td>
+    <td><button (click)="removeItem(i)">Remove</button></td>
+  </tr>
+</table>
+
+<button (click)="addItem()">Add Item</button>
+
+<h3>Total: {{ calculateTotal() }}</h3>
+
+<button (click)="generatePDF()">Generate PDF</button>

@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+  }
+  
+  .tile {
+    width: 200px;
+    height: 150px;
+    background-color: #0263D1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .tile:hover {
+    background-color: #024aa1;
+    transform: scale(1.05);
+  }
+  
