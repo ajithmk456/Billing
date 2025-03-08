@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="header">
+      <h1>SRI AMMAN LABOUR BODY WORKS</h1>
+      <p class="subtext">Quality & Precision in Body Works</p>
+    </div>
+  
+    <div class="card">
+      <h2>Quotation Generator</h2>
+  
+      <div class="form-group">
+        <label>Date:</label>
+        <input type="date" [(ngModel)]="date" />
+      </div>
+  
+      <div class="form-group">
+        <label>Vehicle Number:</label>
+        <input type="text" [(ngModel)]="vehicleNumber" />
+      </div>
+  
+      <div class="form-group">
+        <label>Work Details:</label>
+        <textarea [(ngModel)]="workDetails"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label>Cost Breakdown:</label>
+        <textarea [(ngModel)]="costBreakdown"></textarea>
+      </div>
+  
+      <button (click)="generatePDF()" class="btn">Generate PDF</button>
+    </div>
+  </div>
+  
